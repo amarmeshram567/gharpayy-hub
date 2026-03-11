@@ -12,7 +12,7 @@ export function useProperties(filters?: { city?: string; area?: string; gender?:
       
       if (filters?.city) query = query.eq('city', filters.city);
       if (filters?.area) query = query.eq('area', filters.area);
-      if (filters?.gender) query = query.eq('gender_allowed', filters.gender);
+      if (filters?.gender) query = query.eq('gender_allowed', filters.gender as any);
       
       const { data, error } = await query.order('created_at', { ascending: false });
       if (error) throw error;
