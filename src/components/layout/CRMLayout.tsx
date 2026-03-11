@@ -25,7 +25,7 @@ const navItems = [
   { to: '/zones', label: 'Zones', icon: Map },
   { divider: true, label: 'System' },
   { to: '/settings', label: 'Settings', icon: Settings },
-] as const;
+] as any[];
 
 export default function CRMLayout({ children }: { children: React.ReactNode }) {
   const { signOut, user } = useAuth();
